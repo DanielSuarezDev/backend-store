@@ -4,9 +4,9 @@ const cors = require('cors');
 const {logErrors, errorHandler, boomErrorHandler} = require('./middlewares/error.handler');
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Hello World! My Dogs');
 });
 
